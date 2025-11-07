@@ -6,6 +6,9 @@ const int buttonInputs[NUM_BUTTONS] = {0};
 int analogSliderValues[NUM_SLIDERS];
 int buttonValues[NUM_BUTTONS];
 
+// Add lower threshold (values below this will be sent as 0) (0-1023)
+const int LOWER_THRESHOLD = 5;
+
 void setup() {
   for (int i = 0; i < NUM_SLIDERS; i++) {
     pinMode(analogInputs[i], INPUT);
@@ -38,8 +41,10 @@ void sendSliderValues() {
   String builtString = String("");
 
   for (int i = 0; i < NUM_SLIDERS; i++) {
+    int effectiveValue = (analogSliderValues[i] < LOWER_THRESHOLD) ? 0 : analogSliderValues[i];
+
     builtString += "s";
-    builtString += String((int)analogSliderValues[i]);
+    builtString += String((int)effectiveValue);
 
     if (i < NUM_SLIDERS - 1) {
       builtString += String("|");
