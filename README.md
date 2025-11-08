@@ -2,7 +2,7 @@
 
 This fork of deej adds remappable button support. Buttons must be defined in config with int values. The key values can be found here: https://github.com/micmonay/keybd_event/blob/master/keybd_windows.go (make sure to convert hex values to int)
 
-Be sure to visit the [original repository](https://github.com/omriharel/deej)
+Be sure to visit the [original DEEJ repository](https://github.com/omriharel/deej) [original button support repository](https://github.com/Miodec/deej)
 
 # How to
 
@@ -17,9 +17,3 @@ Case files available in the [/models](https://github.com/Miodec/deej/tree/master
 # Build
 
 Mini build log: https://imgur.com/a/baIDppz
-
-![Finished build](https://i.imgur.com/neM2xle.jpg)
-![Finished build2](https://i.imgur.com/moRmNFJ.jpg)
-
-
-
